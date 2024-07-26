@@ -4,7 +4,7 @@ import certifi
 
 ## 몯고DB 연결
 
-client = MongoClient("mongodb+srv://[몽고DB ID 및 비밀번호]", tlsCAFile = certifi.where())
+client = MongoClient("mongodb+srv://tmddn342:V3lwJ8e5ELCnM2w8@cluster0.rr8s7j4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", tlsCAFile = certifi.where())
 
 ## db 핑 테스트
 try:
