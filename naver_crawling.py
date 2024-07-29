@@ -23,10 +23,10 @@ search_DF = pd.DataFrame(distribution,columns=["name"])
 
 ## 포스트 링크
 link_data = list()
-i = 0
 
 ## 링크 제작
 try :
+    i = 0
     while i < len(th):
         link_data.append(th[i].attrs['href'])
         i += 1
