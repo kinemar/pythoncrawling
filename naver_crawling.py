@@ -7,8 +7,8 @@ import pandas as pd
 browser = mechanicalsoup.StatefulBrowser()
 browserurl = "https://search.naver.com/search.naver?ssc=tab.blog.all&sm=tab_jum&query="
 
-search_data = input("키워드를 입력하세요 : ")
-browserurl = browserurl + search_data
+search_target = input("키워드를 입력하세요 : ")
+browserurl = browserurl + search_target
 browserurl = browserurl.replace(" ", "+")
 browser.open(browserurl)
 

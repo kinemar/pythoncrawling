@@ -7,8 +7,8 @@ import pandas as pd
 browser = mechanicalsoup.StatefulBrowser()
 browserurl = "https://www.google.com/search?q="
 
-search_data = input("키워드를 입력하세요 : ")
-browserurl = browserurl + search_data
+search_target = input("키워드를 입력하세요 : ")
+browserurl = browserurl + search_target
 browserurl = browserurl.replace(" ", "+")
 browser.open(browserurl)
 
