@@ -16,7 +16,6 @@ browser.open(browserurl)
 # browser.launch_browser()
 
 th = browser.page.findAll("a",{"class": "title_link"})
-i = 0
 
 ## 포스트 이름
 distribution = [value.text for value in th]

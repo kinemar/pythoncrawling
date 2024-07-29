@@ -17,17 +17,16 @@ browser.open(browserurl)
 
 th = browser.page.findAll("div",{"class":"BNeawe vvjwJb AP7Wnd"})
 linkth = browser.page.findAll("div",{"class":"egMi0 kCrYT"})
-i = 0
 ## 포스트 이름
 distribution = [value.text for value in th]
 search_DF = pd.DataFrame(distribution,columns=["name"])
 
 ## 포스트 링크
 link_data = list()
-i = 0
 
 ## 링크 제작
 try :
+    i = 0
     while i < len(linkth):
         link_data.append(linkth[i].find("a").attrs["href"].split("q=")[1])
         i += 1
