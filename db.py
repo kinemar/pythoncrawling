@@ -9,7 +9,7 @@ client = MongoClient("mongodb+srv://tmddn342:V3lwJ8e5ELCnM2w8@cluster0.rr8s7j4.m
 ## db 핑 테스트
 try:
     client.admin.command('ping')
-    print("Pinged your deployment. You successfully connected to MongoDB!")
+    print("db에 연결되었습니다.")
 except Exception as e:
     print(e)
 
