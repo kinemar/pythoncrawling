@@ -1,22 +1,21 @@
 ## 라이브러리 호출
-### DB라이브러리는 직접 db.py file로 먼저 생성 후 테스트
 
 import mechanicalsoup
 import pandas as pd
 
 browser = mechanicalsoup.StatefulBrowser()
-browserurl = "https://www.google.com/search?q="
+browserurl = "https://search.naver.com/search.naver?ssc=tab.blog.all&sm=tab_jum&query="
 
 search_target = input("키워드를 입력하세요 : ")
 browserurl = browserurl + search_target
 browserurl = browserurl.replace(" ", "+")
-browser.open(browserurl)
 
+
+search_num = 0
 ## 브라우저 런치 필요시 아래 주석 표시 삭제
 # browser.launch_browser()
-
-th = browser.page.findAll("div",{"class":"BNeawe vvjwJb AP7Wnd"})
-linkth = browser.page.findAll("div",{"class":"egMi0 kCrYT"})
+browser.open(browserurl)
+th = browser.page.findAll("a",{"class": "title_link"})
 
 ## 포스트 이름
 distribution = [value.text for value in th]
@@ -28,9 +27,9 @@ link_data = list()
 ## 링크 제작
 try :
     i = 0
-    while i < len(linkth):
-        link_data.append(linkth[i].find("a").attrs["href"].split("q=")[1])
+    while i < len(th):
+        link_data.append(th[i].attrs['href'])
         i += 1
     search_DF['link'] = link_data
 except :
-    print("관련된 링크가 없습니다.")
+    print("문제가 발생하였습니다.")
